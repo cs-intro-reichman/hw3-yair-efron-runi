@@ -118,6 +118,9 @@ public class Algebra {
 		if (x==0) {
 			return 0;
 		}
+		if (n==1) {
+			return 1;
+		}
 		for(int i=1;i<n;i++)
 		{
 			start=times(start, x);
