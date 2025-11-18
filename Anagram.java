@@ -61,7 +61,6 @@ public class Anagram {
 	public static String preProcess(String str) {
 		// Replace the following statement with your code
 		str=str.toLowerCase();
-		int length=str.length();
 		str=str.replace(" ", "");
     for (int i = 0; i < str.length(); i++) 
 		{
@@ -77,7 +76,18 @@ public class Anagram {
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return "";
+		//create random number from 0 to length -1
+		//take it, push it to new string, 
+		int length=str.length();
+		// delete it 
+		int i=0;
+		String returnstring="";
+		while (str.length()!=0) {
+			int randomIndex = (int) (Math.random() * str.length());
+			returnstring=returnstring+str.charAt(randomIndex);
+			str= str.substring(0, randomIndex) + str.substring(randomIndex + 1);
+		}
+
+		return returnstring;
 	}
 }
