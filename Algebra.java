@@ -121,7 +121,7 @@ public class Algebra {
 		for(int i=1;i<n;i++)
 		{
 			start=times(start, x);
-			System.out.println(start);
+			
 			
 		}
 		return start;
