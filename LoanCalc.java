@@ -74,21 +74,20 @@ public class LoanCalc {
 		{  
 			double newn=n;
 			iterationCounter=0;
-			double L = loan/newn; // <0
-			double H = loan/(newn-1);//>0
+			double L =0; // <0
+			double H = loan;//>0
 			double g = (L + H) / 2.0;//  mid
 			while ((H-L) > epsilon)
 			{
 			if (endBalance(loan, rate, n, g)<0)
 				{
 					H = g;
-					g = (L + H) / 2;
 				}
 				else
 				{
 					L = g;
-					g = (L + H) / 2;
 				}
+				g = (L + H) / 2;
 				iterationCounter++;
 			}
 					return g;
