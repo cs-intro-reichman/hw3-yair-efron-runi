@@ -75,7 +75,7 @@ public class LoanCalc {
 			double newn=n;
 			iterationCounter=0;
 			double L = loan/newn; // <0
-			double H = loan/(newn-5);//>0
+			double H = loan/(newn-1);//>0
 			double g = (L + H) / 2.0;//  mid
 			while ((H-L) >= epsilon)
 			{
