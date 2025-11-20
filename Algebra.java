@@ -182,14 +182,14 @@ public class Algebra {
 		return x1;
 	}	
 
-	// Return
-	public static int sqrt(int x) {
+	// Retu
+	public static int sqrt(int x1) {
 		int i=0;
-		if (x==0)
+		if (x1==0)
 		{
 			return 0;	
 		}
-		for( i=1;x!=pow(i, 2);i++)
+		for( i=1;x1!=pow(i, 2);i++)
 		{
 
 		}
