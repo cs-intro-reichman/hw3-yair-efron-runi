@@ -10,7 +10,7 @@ public class Algebra {
 	    //System.out.println(minus(-7,-2));  // 7 - 2
    		//System.out.println(minus(7,0));
 			//System.out.println(minus(2,0));
- 		//system.out.println(times(-3,4));  // 3 * 4
+ 			System.out.println(times(-3,4));  // 3 * 4
    		//System.out.println(plus(2,times(4,2)));  // 2 + 4 * 2
    		//System.out.println(pow(5,3));      // 5^3
    		//System.out.println(pow(-3,4));      // 3^5
@@ -184,15 +184,13 @@ public class Algebra {
 
 	// Retu
 	public static int sqrt(int x1) {
-		int i=0;
-		if (x1==0)
-		{
-			return 0;	
-		}
-		for( i=1;x1!=pow(i, 2);i++)
-		{
+		
+		if (x1 <= 0) return 0;
 
-		}
-		return i;
+    int i = 1;
+    while (times(i, i) <= x1) {
+        i++;
+    }
+    return i - 1;
 	}	  	  
 }
