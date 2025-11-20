@@ -182,7 +182,7 @@ public class Algebra {
 		return x1;
 	}	
 
-	// Returns t
+	// Return
 	public static int sqrt(int x) {
 		int i=0;
 		if (x==0)
