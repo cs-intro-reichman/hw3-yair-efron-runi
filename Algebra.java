@@ -123,7 +123,7 @@ public class Algebra {
 		 {
 			while (x1 <0) 
 			{
-    	x1 = plus(x1, x2);//x1 returns
+    	x1 = plus(x1, x2);
 		
     	count--;
 			}
@@ -136,7 +136,7 @@ public class Algebra {
 				while (x1 >0) 
 				{
 				
-					x1 = plus(x1, x2);//x1 returns
+					x1 = plus(x1, x2);
 					
 					count--;
 				}		
@@ -153,7 +153,7 @@ public class Algebra {
 				while (newx1 >0) 
 				{
 					
-					newx1 = plus(newx1, x2);//x1 returns
+					newx1 = plus(newx1, x2);
 					
 					count++;
 				}	
