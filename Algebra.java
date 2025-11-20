@@ -8,9 +8,9 @@ public class Algebra {
 	    // Tests some of the operations
 	    //System.out.println(plus(-5,-5));   // 2 + 3
 	    //System.out.println(minus(-7,-2));  // 7 - 2
-   		//System.out.println(minus(2,-7));
+   		System.out.println(minus(7,0));
 			//System.out.println(minus(2,0));
- 			//System.out.println(times(-3,-4));  // 3 * 4
+ 		//system.out.println(times(-3,4));  // 3 * 4
    		//System.out.println(plus(2,times(4,2)));  // 2 + 4 * 2
    		//System.out.println(pow(5,3));      // 5^3
    		//System.out.println(pow(-3,4));      // 3^5
@@ -47,123 +47,52 @@ public class Algebra {
 	// Returns x1 - x2
 	public static int minus(int x1, int x2) 
 	{
-		if (x1==0&&x2>0) {
-			for(int i=1;i<=x2;i++)
-			{
-					x1--;
-			}
-			return x1;
-		}
-		if (x1==0&&x2<0) {
-			for(int i=x2;0>i;i++)
-			{
-					x1++;
-			}
-			return x1;
-		}
-		if (x2<0&&x1>0) {
-			for(int i=x2;i<0;i++)
-			{
-				x1--;
-			}
-		}
-		else
-		{
-		if (x1<0&&x2>0) {
-			for(int i=0;i<x2;i++)
-			{
-				x1--;
-			}
-			return x1;
-		}
-		else
-			{
-				if (x1<0&&x2<0) {
-					for(int i=x2;i<0;i++)
-					{
-						x1++;
-					}
-						return x1;
-				}
-				else
-					{
-						if (x1==0) {
-						for(int i=1;i<=x2;i++)
-						{
-								x1--;
-						}
-						return x1;
-					}
-						
-				else
-				{
-					for(int i=1;i<=x2;i++)
-					{
-						x1--;
-					}
-						return x1;
-					}
-				}
-					}
-				
-			
-		}
-		return x1;
+		if (x2 > 0) {
+        while (x2 > 0) {
+            x1--;
+            x2--;
+        }
+    } else {
+        while (x2 < 0) {
+            x1++;
+            x2++;
+        }
+    }
+    return x1;
 		
 	}
 
 	//finsih
 	// Returns x1 * x2
-	public static int times(int x1, int x2) {
-		int xreturn=x1;
+	public static int times(int x1, int x2) {//- 2 * 3
+		int result=0;
 		if (x1==0 || x2==0) {
 			return 0;
 		}
-		if (x2>0&&x1>0) 
-		{
-			for(int i=1;i<x2;i++)
-			{
-				xreturn=plus(xreturn,x1);
-			}	
-			return xreturn;
-		}
-		if (x1>0&&x2<0) 
-		{
-			xreturn=0;
-			for(int i=1;i<=x1;i++)
-			{
-				xreturn=minus(xreturn,x2);
-			}	
-			return xreturn;
-		}
-		if (x2>0&&x1<0) 
-		{
-			xreturn=0;
-			for(int i=1;i<=x2;i++)
-			{
-				xreturn=minus(xreturn,x1);
-			}	
-			return xreturn;
-		}
-		if (x2<0&&x1<0) 
-		{
-			xreturn=0;
-			for(int i=x2;i<0;i++)
-			{
-				
-				xreturn=plus(xreturn,x1);
-				
-			}	
-		}
-		if (xreturn<0);
-		{
-			int newr=0;
-			for(int i=xreturn;i<0;i++)
-			{
-				newr++;
-			}	
-			return newr;
-		}
+		if (x1 < 0) {
+        x1 = minus(0, x1);  
+        x2 = minus(0, x2);  
+    }
+
+    if (x2 < 0) {
+        int positiveX2 = minus(0, x2); 
+        for (int i = 0; i < positiveX2; i++) {
+            result = plus(result, x1);
+        }
+        
+        int newRes = 0;
+        while (result > 0) {
+            result--;
+            newRes--;
+        }
+        return newRes;
+    }
+
+  
+    for (int i = 0; i < x2; i++) {
+        result = plus(result, x1);
+    }
+    return result;
 	}
 
 	// Returns x^n (for n >= 0)
@@ -172,8 +101,11 @@ public class Algebra {
 		if (x==0) {
 			return 0;
 		}
-		if (n==1) {
+		if (n==0) {
 			return 1;
+		}
+		if (n==1) {
+			return x;
 		}
 		for(int i=1;i<n;i++)
 		{
